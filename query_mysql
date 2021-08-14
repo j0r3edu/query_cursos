@@ -1,0 +1,15 @@
+create database instituto;
+
+use instituto;
+
+create table curso (id_curso varchar(50) primary key, descripcion varchar(100),precio int(22));
+create table forma_pago (id_forma_pago varchar(50), descripcion varchar(100),recargo varchar(100));
+create table inscripcion(id_inscripcion int(22) AUTO_INCREMENT primary key, nombre varchar(100),telefono int(22), id_curso varchar(50), id_forma_pago
+varchar(50), foreign key (id_curso) references curso(id_curso));
+
+insert into curso values('1','Java Enterprice Edition', 800.000);
+insert into curso values('2','Java Standar Edition', 600.000);
+insert into curso values('3','JavaScript ECMA 6', 500.000);
+insert into forma_pago values ('1598','Tarjeta Credito','10%' );
+insert into forma_pago values ('1547','Tarjeta Debito','15%' );
+insert into forma_pago values ('3578','Efectivo','5%' );
